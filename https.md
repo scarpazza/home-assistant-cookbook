@@ -125,7 +125,15 @@ http:
   login_attempts_threshold: 5  
 ```
 
-## Step 7: reconfigure app URLs
+
+## Step 7: test on your desktop browser
+
+* Point your desktop browser to your external URL (e.g., https://your_domain.duckdns.org:8123) and ensure you can log in successfully
+* Point your desktop browser to your internal URL (e.g., https://192.168.x.y:8123)
+  * accept the security exception associated with the website name on the certificate not matching its address. In modern Chrome browsers, this is done by typing the string `thisisunsafe` when presented with the warning message, even if no cursor is visible. You only need to perform this once;
+  * ensure you can log in successfully
+ 
+## Step 8: reconfigure app URLs
 
 * Change your external access URL from http://your_domain.duckdns.org:8123 to https://your_domain.duckdns.org:8123 
 * Change your internal access URL from http://192.168.x.y:8123 to https://192.168.x.y:8123 and accept the security exception associated with the website name on the certificate not matching its address
@@ -133,8 +141,18 @@ http:
 * Disconnect your mobile phone from your home wi-fi and test HA functionality (external URL)
 * Reconnect your mobile phone to your home wi-fi and test HA functionality (internal URL)
 
+## Step 9: add an internet outage link
 
-## Step 8: refresh
+Add a sidebar link that will allow you to switch to the internal URL if you have an internet outage:
+```
+panel_iframe:
+  internal:  
+    title: 'Switch to internal'
+    url: 'https://192.168.x.y:8123'
+    icon: hass:close-network-outline   
+```
+
+## Step 10: certbot periodic recertification
 TO DO.
 
 

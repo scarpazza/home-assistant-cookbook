@@ -1,4 +1,4 @@
-# Enabling https encryption in Home Assistant Core 
+# Enabling SSL encryption in Home Assistant Core 
 
 This is work in progress.
 
@@ -9,10 +9,13 @@ This is tutorial covers the steps necessary to make Home Assistant connections e
 * who run Home Assistant Core, and consequently have no access to the add-on store
 * on Linux
 * who use duckdns.org as a dynamic DNS provider
+* who desire a free SSL certificate from letsencrypt.org
 * whose ISP filters port 80, and consequently can not use certbot's http challenge (that is tied to port 80)                                                                                                                                                
 Users with increasingly different setups will find this tutorial less and less useful. 
 
-Reference: https://certbot.eff.org/docs/using.html?highlight=dns#manual
+Reference:
+* https://certbot.eff.org/docs/using.html?highlight=dns#manual
+* https://letsencrypt.org/docs/challenge-types/#dns-01-challenge
 
 ## Step 1: install certbot
 
@@ -30,7 +33,7 @@ Even if certbot will request a TXT record for name `_acme-challenge.your_domain.
 
 
 ```
-certbot certonly --manual -d your_domain.duckdns.org -m you@your_email_provider.com --preferred-challenge dns
+certbot certonly --manual -d your_domain.duckdns.org -m you@your_email_provider.com --preferred-challenge dns --agree-tos
 ```
 
 Certbot will respond with:

@@ -1,2 +1,3 @@
-# home-assistant-cookbook
-Assorted Home Assistant recipes
+# Home Assistant Cookbook
+
+Assorted Home Assistant recipes.

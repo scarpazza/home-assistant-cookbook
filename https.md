@@ -2,14 +2,15 @@
 
 This is work in progress.
 
-This is tutorial covering the steps necessary to make Home Assistant connections encrypted.  
 
 ## Goal
 
-This tutorial is designed for users:
+This is tutorial covers the steps necessary to make Home Assistant connections encrypted, for users:
 * who run Home Assistant Core, and consequently have no access to the add-on store
+* on Linux
 * who use duckdns.org as a dynamic DNS provider
 * whose ISP filters port 80, and consequently can not use certbot's http challenge (that is tied to port 80)                                                                                                                                                
+Users with increasingly different setups will find this tutorial less and less useful. 
 
 Reference: https://certbot.eff.org/docs/using.html?highlight=dns#manual
 
@@ -118,8 +119,8 @@ Edit your `configuration.yaml`
 
 ```
 http:
-  ssl_certificate: /etc/letsencrypt/live/scarpaz.duckdns.org/fullchain.pem        
-  ssl_key: /etc/letsencrypt/live/scarpaz.duckdns.org/privkey.pem
+  ssl_certificate: /etc/letsencrypt/live/your_domain.duckdns.org/fullchain.pem        
+  ssl_key: /etc/letsencrypt/live/your_domain.duckdns.org/privkey.pem
   ip_ban_enabled: true
   login_attempts_threshold: 5  
 ```

@@ -156,6 +156,6 @@ panel_iframe:
 ```
 
 ## Step 10: certbot periodic recertification
-TO DO.
+Repeate steps 2 ... 5 when you receive a reminder from letsencrypt.org recommending a renewal.
 
 

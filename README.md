@@ -6,4 +6,4 @@ Assorted Home Assistant recipes.
 
 [Grandfather Clock-Style Hour Chimes](https://github.com/scarpazza/home-assistant-cookbook/blob/main/chime.md)
 
-[Sonos debugging](https://github.com/scarpazza/home-assistant-cookbook/blob/main/sonos.md)
+[Sonos smart speaker debugging](https://github.com/scarpazza/home-assistant-cookbook/blob/main/sonos.md)

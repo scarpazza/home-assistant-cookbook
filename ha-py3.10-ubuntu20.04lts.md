@@ -6,7 +6,8 @@ sudo apt upgrade -y
 sudo apt autoremove
 sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa -y
-sudo apt install python3.10 python3.10-dev python3.10-venvpython3.10 -m venv 
+sudo apt install python3.10 python3.10-dev python3.10-venv
+python3.10 -m venv 
 python3.10 -c 'print("hello world!")'
 
 cd

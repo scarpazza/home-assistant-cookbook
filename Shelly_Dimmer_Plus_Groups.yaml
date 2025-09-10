@@ -1,0 +1,119 @@
+- id: '1757517530778'
+  alias: Propagate brightness changes from Top of Stairs to Corridor West
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - light.corridor_dimmer_top_of_stairs_light_0
+    attribute: brightness
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: '{{ state_attr(''light.corridor_dimmer_top_of_stairs_light_0'',''brightness'')/255.0*100.0|float}}'
+    target:
+      device_id: 64157ff603c054b46d996ab01352f2d6
+  mode: single
+- id: '1757517530778'
+  alias: Propagate brightness changes from Corridor West
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - light.corridor_lights
+    attribute: brightness
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: '{{ state_attr(''light.corridor_lights'',''brightness'')/255.0*100.0|float}}'
+    target:
+      device_id: 14ba796dbad09f637cc12b2b5de197cc
+  mode: single
+- id: '1757518271112'
+  alias: Propagate dimmer turn-on from Top of Stairs to Corridor West
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 14ba796dbad09f637cc12b2b5de197cc
+    entity_id: b84a293b58eb8ed6cb68859925cead30
+    domain: light
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id: 64157ff603c054b46d996ab01352f2d6
+  mode: single
+- id: '1757518273112'
+  alias: Propagate dimmer turn-on from Corridor West to Top of Stairs
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 64157ff603c054b46d996ab01352f2d6
+    entity_id: 3f15195c926fd6ed8e85e5d48fc14254
+    domain: light
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id: 14ba796dbad09f637cc12b2b5de197cc
+  mode: single
+- id: '1757518495488'
+  alias: Propagate dimmer turn-off from Top of Stairs to Corridor West
+  description: ''
+  triggers:
+  - type: turned_off
+    device_id: 14ba796dbad09f637cc12b2b5de197cc
+    entity_id: b84a293b58eb8ed6cb68859925cead30
+    domain: light
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id: 64157ff603c054b46d996ab01352f2d6
+  mode: single
+- id: '1757518495588'
+  alias: Propagate dimmer turn-off from Corridor West to Top of Stairs
+  description: ''
+  triggers:
+  - type: turned_off
+    device_id: 64157ff603c054b46d996ab01352f2d6
+    entity_id: 3f15195c926fd6ed8e85e5d48fc14254
+    domain: light
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id: 14ba796dbad09f637cc12b2b5de197cc
+  mode: single
+- id: '1757519175061'
+  alias: Propagate brightness changes from Corridor West to Top of Stairs
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - light.corridor_lights
+    attribute: brightness
+  conditions: []
+  actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: '{{ state_attr(''light.corridor_lights'',''brightness'')/255.0*100.0|float}}'
+    target:
+      device_id: 14ba796dbad09f637cc12b2b5de197cc
+  mode: single
